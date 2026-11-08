@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simple Profile App</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main class="card">
+    <div class="brand">
+      <div class="logo" id="logoPreview">LOGO</div>
+      <div><h1>My Profile App</h1><p class="muted">Add your details and upload an application logo.</p></div>
+    </div>
+
+    <section>
+      <h2>Your information</h2>
+      <form id="profileForm">
+        <label for="name">Name</label>
+        <input id="name" name="name" type="text" placeholder="Enter your name" required maxlength="80">
+        <label for="age">Age</label>
+        <input id="age" name="age" type="number" placeholder="Enter your age" required min="1" max="120">
+        <button type="submit">Submit details</button>
+      </form>
+      <div id="profileResult" class="result" hidden></div>
+    </section>
+
+    <section>
+      <h2>Upload application logo</h2>
+      <p class="muted">Choose a PNG, JPG, WEBP or GIF image (maximum 5 MB).</p>
+      <input id="logoFile" type="file" accept="image/png,image/jpeg,image/webp,image/gif">
+      <button id="uploadButton" type="button">Upload logo to S3</button>
+      <p id="uploadStatus" class="status" role="status"></p>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
