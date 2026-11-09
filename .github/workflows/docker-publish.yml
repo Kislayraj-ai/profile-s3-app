@@ -37,7 +37,12 @@ jobs:
           tags: |
             ${{ vars.DOCKERHUB_USERNAME }}/profile-s3-app:latest
             ${{ vars.DOCKERHUB_USERNAME }}/profile-s3-app:${{ github.sha }}
-
+      
+      - name: Debug GitHub workflow context
+        run: |
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF"
+          echo "Event: $GITHUB_EVENT_NAME"
       - name: Configure AWS credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v4
         with:
