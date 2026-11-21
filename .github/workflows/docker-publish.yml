@@ -67,7 +67,7 @@ jobs:
 
       - name: Deploy Docker image to EC2 using SSM
         env:
-          EC2_INSTANCE_ID: i-0a4ec02d61149c9ed
+          EC2_INSTANCE_ID: i-0d2ef557e8d3d0915
           IMAGE_URI: ${{ vars.DOCKERHUB_USERNAME }}/profile-s3-app:${{ github.sha }}
         run: |
           PARAMETERS=$(jq -n --arg image "$IMAGE_URI" '{
